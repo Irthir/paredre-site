@@ -1,4 +1,28 @@
-baseURL = 'https://example.org/'
-languageCode = 'fr'
-title = 'Parèdre'
-theme = 'PaperMod'
+baseURL = "https://irthir.github.io/paredre-site/"
+languageCode = "fr"
+title = "Parèdre"
+theme = "PaperMod"
+
+# Configuration du menu principal
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "À propos"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+# Configuration des dates
+paginate = 5  # Nombre d'articles par page
+
+# Réglages des permaliens pour les articles
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"
