@@ -31,4 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          force_orphan true # Supprime tout l'ancien contenu avant de pousser
+          force_orphan: true # Supprime tout l'ancien contenu avant de pousser
