@@ -1,0 +1,21 @@
+public/
+resources/
+.hugo_build.lock
+*.lock
+*.DS_Store
+node_modules/
+
+# Fichiers Hugo générés automatiquement
+public/
+resources/
+.hugo_build.lock
+
+# Fichiers de configuration temporaires
+*.lock
+*.DS_Store
+
+# Modules Node.js (si tu utilises npm pour des scripts Hugo)
+node_modules/
+
+# Fichiers cachés de l'OS
+Thumbs.db
