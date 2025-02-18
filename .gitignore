@@ -19,3 +19,6 @@ node_modules/
 
 # Fichiers cachés de l'OS
 Thumbs.db
+
+# Ignore command files
+*.cmd
