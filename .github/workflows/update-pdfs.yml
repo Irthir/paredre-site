@@ -17,7 +17,7 @@ jobs:
           ref: gh-pages  # Récupérer gh-pages au lieu de main
       
       - name: Récupérer le script depuis la branche main
-          run: |
+        run: |
             git fetch origin main
             git checkout main -- update_articles.py
 
