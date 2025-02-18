@@ -1,16 +1,19 @@
-name: Update PDF Content in Markdown (gh-pages)
+name: Update PDF Content in Markdown
 
 on:
   push:
     branches:
-      - main  # Déclencher l'action quand on push sur main
-  workflow_dispatch:  # Permet de lancer l'action manuellement
+      - main  # Changer si ton repo est sur 'master'
+  workflow_dispatch:  # Permet de lancer manuellement l'action
 
 jobs:
   update-markdown:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -27,5 +30,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add content/posts/*.md
-          git commit -m "Auto-update articles from PDFs on gh-pages" || echo "No changes to commit"
-          git push origin gh-pages  # Pousser uniquement sur gh-pages
+          git commit -m "Auto-update articles from PDFs" || echo "No changes to commit"
+          git push
