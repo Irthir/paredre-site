@@ -15,6 +15,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: gh-pages  # Récupérer gh-pages au lieu de main
+      
+      - name: Récupérer le script depuis la branche main
+          run: |
+            git fetch origin main
+            git checkout main -- update_articles.py
 
       - name: Set up Python
         uses: actions/setup-python@v3
