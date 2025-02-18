@@ -11,11 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages  # Récupérer gh-pages au lieu de main
-
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -31,6 +26,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.md
+          git add content/posts/*.md
           git commit -m "Auto-update articles from PDFs on gh-pages" || echo "No changes to commit"
           git push origin gh-pages  # Pousser uniquement sur gh-pages
