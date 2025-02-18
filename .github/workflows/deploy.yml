@@ -3,26 +3,26 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change si ta branche principale est "master"
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout du dépôt
+      - name: Checkout du dépôt (toutes branches)
         uses: actions/checkout@v4
         with:
-          submodules: true  # Nécessaire si le thème est un submodule
-          fetch-depth: 0     # Important pour les sites avec GitInfo activé
+          submodules: true
+          fetch-depth: 0  # Récupère tout l'historique
 
-      - name: Récupérer le script depuis la branche main
+      - name: Vérifier la présence du script avant récupération
+        run: ls -lah || echo "Fichiers non trouvés"
+
+      - name: Récupérer `update_articles.py` depuis main
         run: |
-          git fetch origin main
-          git checkout main -- update_articles.py
-
-      - name: Vérifier la présence du script
-        run: ls -lah update_articles.py || echo "Fichier introuvable"
+          git checkout origin/main -- update_articles.py
+          ls -lah update_articles.py || echo "Fichier introuvable après récupération"
 
       - name: Installer Python et pdfplumber
         run: |
@@ -36,7 +36,7 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true  # Installe la version Extended
+          extended: true
 
       - name: Construire le site
         run: hugo --minify
@@ -47,4 +47,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          force_orphan: true # Supprime tout l'ancien contenu avant de pousser
+          force_orphan: true
