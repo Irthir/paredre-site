@@ -1,6 +1,6 @@
 ---
 title: "Le mythe du roi corbeau"
-date: 14-01-0373
+date: 14-01-373
 author: "Whedab"
 tags: ["Légende"]
 categories: ["nouvelles"]
