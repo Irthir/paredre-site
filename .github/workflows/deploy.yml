@@ -16,6 +16,17 @@ jobs:
           submodules: true  # Nécessaire si le thème est un submodule
           fetch-depth: 0     # Important pour les sites avec GitInfo activé
 
+      - name: Récupérer le script depuis la branche main
+        run: |
+          git fetch origin main
+          git checkout main -- update_articles.py
+
+      - name: Lister les fichiers (débogage)
+        run: ls -R
+
+      - name: Exécuter le script de mise à jour
+        run: python update_articles.py
+
       - name: Installer Hugo
         uses: peaceiris/actions-hugo@v3
         with:
