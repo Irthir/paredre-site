@@ -17,12 +17,17 @@ jobs:
           fetch-depth: 0  # Récupère tout l'historique
 
       - name: Vérifier la présence du script avant récupération
-        run: ls -lah || echo "Fichiers non trouvés"
-
+        run: ls -lah
+  
       - name: Récupérer `update_articles.py` depuis main
         run: |
+          git fetch origin main
           git checkout origin/main -- update_articles.py
           ls -lah update_articles.py || echo "Fichier introuvable après récupération"
+  
+      - name: Vérifier où se trouve le fichier
+        run: find . -name "update_articles.py"
+  
 
       - name: Installer Python et pdfplumber
         run: |
