@@ -15,7 +15,10 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0  # Récupère tout l'historique
-          
+  
+      - name: Se placer dans le bon répertoire
+        run: cd ${{ github.workspace }}
+  
       - name: Installer Python et pdfplumber
         run: |
           python -m pip install --upgrade pip
