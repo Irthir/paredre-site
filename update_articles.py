@@ -2,8 +2,8 @@ import os
 import pdfplumber
 
 # Dossiers
-PDF_DIR = "pdfs/"
-CONTENT_DIR = "/"
+PDF_DIR = "pdfs"
+CONTENT_DIR = ""
 
 def find_md_file(article_name):
     """Recherche récursivement un fichier Markdown correspondant au nom de l'article"""
