@@ -1,4 +1,11 @@
 ---
+title: "Le mythe du roi corbeau"
+date: 0373-01-14
+author: "Whedab"
+tags: ["Légende"]
+categories: ["Nouvelles"]
+draft: false
+---
 
 Whedab Année de l’hiver 373 – 1ère lune, Pleine Lune 373-01-14
 Sous les cieux dorés, résonnent les premières cigales, l’hiver a complètement disparu.
