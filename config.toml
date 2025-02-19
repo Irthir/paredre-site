@@ -26,3 +26,15 @@ paginate = 5  # Nombre d'articles par page
 # Réglages des permaliens pour les articles
 [permalinks]
   posts = "/:year/:month/:day/:slug/"
+
+# Configuration du rendu Markdown pour conserver les sauts de ligne
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.extensions]
+      typographer = false
