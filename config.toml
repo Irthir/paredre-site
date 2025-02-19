@@ -23,6 +23,9 @@ theme = "PaperMod"
 # Configuration des dates
 paginate = 5  # Nombre d'articles par page
 
+[params]
+  showDate = false  # Désactive l'affichage de la date
+
 # Réglages des permaliens pour les articles
 [permalinks]
   posts = "/:year/:month/:day/:slug/"
