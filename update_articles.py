@@ -2,22 +2,37 @@ import os
 import pdfplumber
 
 # Dossiers
-PDF_DIR = "static/pdfs"
-POSTS_DIR = "content/posts"
+PDF_DIR = "pdfs/"
+CONTENT_DIR = "content/"
 
-# Liste tous les fichiers Markdown
-for md_file in os.listdir(POSTS_DIR):
-    if md_file.endswith(".md"):
-        article_name = os.path.splitext(md_file)[0]  # Nom sans extension
-        pdf_path = os.path.join(PDF_DIR, f"{article_name}.pdf")
-        md_path = os.path.join(POSTS_DIR, md_file)
+def find_md_file(article_name):
+    """Recherche récursivement un fichier Markdown correspondant au nom de l'article"""
+    for root, _, files in os.walk(CONTENT_DIR):
+        for file in files:
+            if file.endswith(".md") and os.path.splitext(file)[0] == article_name:
+                return os.path.join(root, file)  # Retourne le chemin complet
+    return None
 
-        # Vérifie si le fichier PDF correspondant existe
-        if os.path.exists(pdf_path):
+# Liste des PDF
+for pdf_file in os.listdir(PDF_DIR):
+    if pdf_file.endswith(".pdf"):
+        article_name = os.path.splitext(pdf_file)[0]  # Nom sans extension
+        pdf_path = os.path.join(PDF_DIR, pdf_file)
+
+        # Cherche le fichier .md correspondant
+        md_path = find_md_file(article_name)
+        
+        if md_path:
             with pdfplumber.open(pdf_path) as pdf:
-                text = "\n\n".join([page.extract_text() or "" for page in pdf.pages])
+                text = ""
+                for page in pdf.pages:
+                    extracted_text = page.extract_text()
+                    if extracted_text:
+                        text += extracted_text + "\n\n"  # Ajoute des sauts de ligne pour séparer les paragraphes
+                
+                text = text.strip()  # Supprime les espaces inutiles
 
-            # Lire le fichier Markdown et conserver le frontmatter
+            # Lire le fichier Markdown et conserver le front matter
             with open(md_path, "r", encoding="utf-8") as f:
                 content = f.read()
 
@@ -28,14 +43,14 @@ for md_file in os.listdir(POSTS_DIR):
                 frontmatter = content
                 old_text = ""
 
-            # Remplace l'ancien texte par le nouveau
+            # Ajoute le texte extrait après le frontmatter
             new_content = f"{frontmatter}---\n\n{text}"
 
             # Écriture du fichier Markdown mis à jour
             with open(md_path, "w", encoding="utf-8") as f:
                 f.write(new_content)
 
-            print(f"✅ Contenu mis à jour pour : {md_file}")
+            print(f"✅ Contenu mis à jour pour : {md_path}")
 
         else:
-            print(f"⚠️ Aucun PDF trouvé pour : {md_file}")
+            print(f"⚠️ Aucun fichier Markdown trouvé pour : {article_name}")
