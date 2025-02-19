@@ -6,7 +6,7 @@ tags: ["Légende"]
 categories: ["Nouvelles"]
 draft: false
 ---
-Année de l’hiver 373 – 1ère lune, Pleine Lune
+Année de l’hiver 373 – 1ère lune, 14ème jour, Pleine Lune
 Whedab
 
 Sous un ciel d’or, les cigales chantent,
