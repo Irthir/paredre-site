@@ -45,7 +45,15 @@
 
   {{- /* Affichage de l'image si elle existe */}}
   {{- if $coverImage }}
-    <img src="{{ $coverImage.RelPermalink }}" alt="Couverture de {{ .Title }}" class="post-cover">
+    {{- with .Params.cover.image }}
+      {{- $image := resources.Get . }}
+      {{- if $image }}
+        {{- $resized := $image.Fill "600x300 Center" }}
+        <img src="{{ $resized.RelPermalink }}" alt="Cover" class="post-cover">
+      {{- else }}
+        <img src="{{ . | relURL }}" alt="Cover" class="post-cover">
+      {{- end }}
+    {{- end }}
   {{- end }}
 
   <header class="entry-header">
