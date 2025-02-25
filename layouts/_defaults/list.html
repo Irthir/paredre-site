@@ -38,15 +38,14 @@
 {{- range $index, $page := $paginator.Pages }}
 
 <article class="post-entry">
-  {{- /* Générer le chemin des images */}}
-  {{- $imageJPG := printf "posts/%s.jpg" .File.BaseFileName }}
-  {{- $imagePNG := printf "posts/%s.png" .File.BaseFileName }}
+  {{- /* Récupération des images de couverture dans le dossier du post */}}
+  {{- $imageJPG := .Resources.GetMatch "*.jpg" }}
+  {{- $imagePNG := .Resources.GetMatch "*.png" }}
+  {{- $coverImage := $imageJPG | default $imagePNG }}
 
-  {{- /* Vérifier si une image existe et l'afficher */}}
-  {{- if (fileExists (printf "content/%s" $imageJPG)) }}
-    <img src="{{ $imageJPG | relURL }}" alt="Couverture de {{ .Title }}" class="post-cover">
-  {{- else if (fileExists (printf "content/%s" $imagePNG)) }}
-    <img src="{{ $imagePNG | relURL }}" alt="Couverture de {{ .Title }}" class="post-cover">
+  {{- /* Affichage de l'image si elle existe */}}
+  {{- if $coverImage }}
+    <img src="{{ $coverImage.RelPermalink }}" alt="Couverture de {{ .Title }}" class="post-cover">
   {{- end }}
 
   <header class="entry-header">
