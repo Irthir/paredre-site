@@ -1,6 +1,6 @@
 ---
 title: "Le mythe du roi corbeau"
-cover: "Le mythe du roi corbeau.png"
+cover: image : "Le mythe du roi corbeau.png"
 date: 0373-01-14
 author: "Whedab"
 tags: ["Légende"]
