@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Change si ta branche principale est "master"
+  workflow_dispatch:  # Permet de déclencher manuellement depuis GitHub Actions
 
 jobs:
   build-deploy:
@@ -15,6 +16,15 @@ jobs:
         with:
           submodules: true  # Nécessaire si le thème est un submodule
           fetch-depth: 0     # Important pour les sites avec GitInfo activé
+
+      - name: Forcer la reconstruction du site
+        run: |
+          echo "Dernière build: $(date)" > last_build.txt
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git add last_build.txt
+          git commit -m "Mise à jour automatique du timestamp pour rebuild" || echo "Aucune modification à commit"
+          git push || echo "Aucune modification à push"
 
       - name: Installer Hugo
         uses: peaceiris/actions-hugo@v3
