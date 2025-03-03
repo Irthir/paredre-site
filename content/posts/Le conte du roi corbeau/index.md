@@ -2,13 +2,13 @@
 title: "Le conte du roi corbeau"
 cover:
  image: "le-conte-du-roi-corbeau.jpg"
-date: 0373-01-14
+date: 0382-06-29
 author: "Whedab"
 tags: ["Légende"]
 categories: ["Nouvelles"]
 draft: false
 ---
-Année de l’hiver 382 – 6ème lune, 29ème jour, Nouvelle Lune 382-06-29
+Année de l’hiver 382 – 6ème lune, 29ème jour, Nouvelle Lune
 Elisa 
 
 La pluie battante frappe sur les tuiles et les volets. La chaleur de l’été est encore maintenue par le manteau noire revêtue par les cieux. Mais quand cette pluie cessera l’automne et ses vagues de maladies apparaitront.
