@@ -1,0 +1,7 @@
+.post-cover {
+  max-width: 150px; /* Ajuste selon tes besoins */
+  height: auto; /* Garde le ratio */
+  display: block;
+  margin: auto; /* Centre les images */
+  object-fit: cover;
+}
