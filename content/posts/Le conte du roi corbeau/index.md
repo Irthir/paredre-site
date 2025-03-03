@@ -11,8 +11,7 @@ draft: false
 Année de l’hiver 382 – 6ème lune, 29ème jour, Nouvelle Lune
 Elisa 
 
-La pluie battante frappe sur les tuiles et les volets. La chaleur de l’été est encore maintenue par le manteau noire revêtue par les cieux. Mais quand cette pluie cessera l’automne et ses vagues de maladies apparaitront.
-Mon enfant, lui, est déjà pâle et blotti contre moi, j’ouvre le livre sur mes genoux et commence à lire à haute voix :
+La pluie battante frappe sur les tuiles et les volets. La chaleur de l’été est encore maintenue par le manteau noire revêtue par les cieux. Mais quand cette pluie cessera l’automne et ses vagues de maladies apparaitront. Mon enfant, lui, est déjà pâle et blotti contre moi, j’ouvre le livre sur mes genoux et commence à lire à haute voix :
 
 « Sous l'or du ciel, chantent les monts, Le roi s’avance, ombre égarée, Un vent l’appelle à reculer, Mais il s’enfonce à l’horizon.
 Les bois où dorment des autels Voient le soleil mourir encore, Les feuilles chuchotent un sort, Et la nuit tombe en flocons d'ailes.
