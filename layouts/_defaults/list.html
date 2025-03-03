@@ -48,7 +48,7 @@
     {{- with .Params.cover.image }}
       {{- $image := resources.Get . }}
       {{- if $image }}
-        {{- $resized := $image.Fill "600x300 Center" }}
+        {{- $resized := $image.Fill "100x50 Center" }}
         <img src="{{ $resized.RelPermalink }}" alt="Cover" class="post-cover">
       {{- else }}
         <img src="{{ . | relURL }}" alt="Cover" class="post-cover">
