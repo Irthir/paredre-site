@@ -50,6 +50,7 @@
       {{- if $image }}
         {{- $resized := $image.Fill "100x50 Center" }}
         <img src="{{ $resized.RelPermalink }}" alt="Cover" class="post-cover">
+        <p>Image générée : {{ $resized.RelPermalink }}</p>
       {{- else }}
         <img src="{{ . | relURL }}" alt="Cover" class="post-cover">
       {{- end }}
