@@ -23,8 +23,15 @@ Voient le soleil mourir encore,
 Les feuilles chuchotent un sort,
 Et la nuit tombe en flocons d'ailes.
 
-Des chants s’élèvent dans le vent, Un grand banquet brille en mystère, Le roi s’y glisse, âme légère, Guidé par l’ombre et son avant.
-Quand vint l’aurore aux feux vainqueurs, Nul ne revit le roi errant, Seul un silence déchirant Veillait sur une plume en pleurs. »
+Des chants s’élèvent dans le vent,
+Un grand banquet brille en mystère,
+Le roi s’y glisse, âme légère,
+Guidé par l’ombre et son avant.
+
+Quand vint l’aurore aux feux vainqueurs,
+Nul ne revit le roi errant,
+Seul un silence déchirant
+Veillait sur une plume en pleurs. »
 
 Sa douce respiration m’indique que mon trésor s’est endormi, mais les larmes me montent et je ne peux retenir mes mots. « Tu entends ça mon coeur ? Cette histoire parle de ton grand père, le plus grand roi de notre histoire. Elle raconte qu’il a disparu après que les dieux, eux-mêmes, l’aient invité en leur sanctuaire. »
 « Mais il reviendra, j’en suis sûre. Il était un homme bon, aimable et sincère. Si son petit-fils a besoin d’aide il accourra, je le sais… »
