@@ -13,8 +13,16 @@ Elisa
 
 La pluie battante frappe sur les tuiles et les volets. La chaleur de l’été est encore maintenue par le manteau noire revêtue par les cieux. Mais quand cette pluie cessera l’automne et ses vagues de maladies apparaitront. Mon enfant, lui, est déjà pâle et blotti contre moi, j’ouvre le livre sur mes genoux et commence à lire à haute voix :
 
-« Sous l'or du ciel, chantent les monts, Le roi s’avance, ombre égarée, Un vent l’appelle à reculer, Mais il s’enfonce à l’horizon.
-Les bois où dorment des autels Voient le soleil mourir encore, Les feuilles chuchotent un sort, Et la nuit tombe en flocons d'ailes.
+« Sous l'or du ciel, chantent les monts,
+Le roi s’avance, ombre égarée,
+Un vent l’appelle à reculer,
+Mais il s’enfonce à l’horizon.
+
+Les bois où dorment des autels
+Voient le soleil mourir encore,
+Les feuilles chuchotent un sort,
+Et la nuit tombe en flocons d'ailes.
+
 Des chants s’élèvent dans le vent, Un grand banquet brille en mystère, Le roi s’y glisse, âme légère, Guidé par l’ombre et son avant.
 Quand vint l’aurore aux feux vainqueurs, Nul ne revit le roi errant, Seul un silence déchirant Veillait sur une plume en pleurs. »
 
