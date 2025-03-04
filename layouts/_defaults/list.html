@@ -48,7 +48,7 @@
     {{- with .Params.cover.image }}
       {{- $image := site.GetPage "page" . }}
       {{- if $image }}
-        {{- $resized := $image.Fill "100x50 Center" }}
+        {{- $resized := $image.Fill "fit 100x50" }}
         <img src="{{ $resized.RelPermalink }}" alt="Cover" class="post-cover">
         <p>Image générée : {{ $resized.RelPermalink }}</p>
       {{- else }}
