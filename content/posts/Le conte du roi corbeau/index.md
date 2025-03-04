@@ -4,7 +4,7 @@ cover:
  image: "le-conte-du-roi-corbeau.jpg"
 date: 0382-06-29
 author: "Whedab"
-tags: ["Légende"]
+tags: ["Elisa"]
 categories: ["Nouvelles"]
 draft: false
 ---
