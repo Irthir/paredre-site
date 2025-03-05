@@ -26,6 +26,8 @@ paginate = 5  # Nombre d'articles par page
 [params]
   showDate = false  # Désactive l'affichage de la date
   hideAuthor = true
+  disableCredits = true
+
 
 # Réglages des permaliens pour les articles
 [permalinks]
