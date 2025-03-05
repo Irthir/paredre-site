@@ -17,6 +17,9 @@ jobs:
           submodules: true  # Nécessaire si le thème est un submodule
           fetch-depth: 0     # Important pour les sites avec GitInfo activé
 
+      - name: Nettoyer les fichiers avant la compilation
+        run: rm -rf public resources
+
       - name: Installer Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -24,7 +27,7 @@ jobs:
           extended: true  # Installe la version Extended
 
       - name: Construire le site
-        run: hugo --minify
+        run: hugo --minify --debug --verbose
 
       - name: Déployer sur GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

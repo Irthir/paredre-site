@@ -27,6 +27,9 @@ paginate = 5  # Nombre d'articles par page
   showDate = false  # Désactive l'affichage de la date
   hideAuthor = true
   disableCredits = true
+  disableKinds = ["RSS", "sitemap", "taxonomy", "term"]
+  ignoreErrors = ["error-missing-layout"]
+
 
 
 # Réglages des permaliens pour les articles
