@@ -7,9 +7,7 @@
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
-  <h1>
-    {{ .Title }}
-  </h1>
+  <h1>{{ .Title }}</h1>
   {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
@@ -30,7 +28,7 @@
 
 {{- if .IsHome }}
   {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
+  {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- end }}
 
 {{- $paginator := .Paginate $pages }}
@@ -38,32 +36,30 @@
 {{- range $index, $page := $paginator.Pages }}
 
 <article class="post-entry">
-  {{- /* Récupération des images de couverture dans le dossier du post */}}
+  
+  {{- /* Gestion des images de couverture */}}
   {{- $imageJPG := .Resources.GetMatch "*.jpg" }}
   {{- $imagePNG := .Resources.GetMatch "*.png" }}
   {{- $coverImage := $imageJPG | default $imagePNG }}
 
-  {{- /* Affichage de l'image si elle existe */}}
   {{- if $coverImage }}
-    {{- with .Params.cover.image }}
-      /*{{- $image := site.GetPage "page" . }}
-        <img src="{{ . | relURL }}" alt="Cover" class="post-cover">*/
-    {{- end }}
+  <div class="entry-cover">
+    <img src="{{ $coverImage.RelPermalink }}" alt="Cover image for {{ .Title }}">
+  </div>
   {{- end }}
 
   <header class="entry-header">
     <h2 class="entry-hint-parent">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a class="entry-link" href="{{ .Permalink }}">{{ .Title }}</a>
     </h2>
   </header>
 
   {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...</p>
   </div>
   {{- end }}
 
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
 
