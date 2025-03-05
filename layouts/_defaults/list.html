@@ -46,14 +46,8 @@
   {{- /* Affichage de l'image si elle existe */}}
   {{- if $coverImage }}
     {{- with .Params.cover.image }}
-      {{- $image := site.GetPage "page" . }}
-      /*{{- if $image }}
-        {{- $resized := $image.Fill "fit 100x50" }}
-        <img src="{{ $resized.RelPermalink }}" alt="Cover" class="post-cover">
-        <p>Image générée : {{ $resized.RelPermalink }}</p>
-      {{- else }}*/
-        <img src="{{ . | relURL }}" alt="Cover" class="post-cover">
-      /*{{- end }}*/
+      /*{{- $image := site.GetPage "page" . }}
+        <img src="{{ . | relURL }}" alt="Cover" class="post-cover">*/
     {{- end }}
   {{- end }}
 
