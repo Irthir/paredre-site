@@ -27,7 +27,7 @@ jobs:
           extended: true  # Installe la version Extended
 
       - name: Construire le site
-        run: hugo --minify --debug --verbose
+        run: hugo --minify
 
       - name: Déployer sur GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
