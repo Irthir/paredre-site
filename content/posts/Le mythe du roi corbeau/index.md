@@ -4,7 +4,7 @@ cover:
  image: "le-mythe-du-roi-corbeau.jpg"
 date: 0373-01-14
 author: "Whedab"
-tags: ["Légende"]
+tags: ["Whedab"]
 categories: ["Nouvelles"]
 draft: false
 ---
