@@ -1,0 +1,16 @@
+.entry-cover {
+  width: 100%;       /* S'assure que le conteneur de l'image ne dépasse pas */
+  max-height: 300px; /* Ajuste la hauteur maximale selon tes besoins */
+  overflow: hidden;  /* Coupe l'image si elle dépasse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Empêche l'image d'être déformée */
+  max-height: 300px; /* Ajuste pour éviter qu'elle ne soit trop grande */
+  display: block;
+}
