@@ -10,7 +10,7 @@
 {{- else }}
 
 {{- /* Call fixed partial */ -}}
-{{- $images := partial "_funcs/get-page-images" . -}}
+{{- $images := partial "templates/_funcs/get-page-images" . -}}
 
 {{- with index $images 0 }}
 <meta name="twitter:card" content="summary_large_image">
