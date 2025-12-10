@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nouvelle</title>
+  <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="content"></div>
+
+<script>
+async function loadPost() {
+  const params = new URLSearchParams(location.search);
+  const file = params.get("file");
+  const txt = await fetch("posts/" + file).then(r => r.text());
+
+  const md = txt.replace(/^---[\s\S]*?---/, ""); // retire le frontmatter
+  const converter = new showdown.Converter();
+  const html = converter.makeHtml(md);
+
+  document.getElementById("content").innerHTML = html;
+}
+
+loadPost();
+</script>
+
+</body>
+</html>

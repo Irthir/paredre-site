@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bibliothèque de nouvelles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Nouvelles</h1>
+
+<div id="filters"></div>
+<div id="posts" class="grid"></div>
+
+<script>
+async function loadPosts() {
+  const response = await fetch("posts.json");
+  const posts = await response.json();
+
+  renderFilters(posts);
+  renderPosts(posts);
+}
+
+function renderFilters(posts) {
+  const container = document.getElementById("filters");
+
+  const authors = [...new Set(posts.map(p => p.author))];
+  const tags = [...new Set(posts.flatMap(p => p.tags))];
+  const categories = [...new Set(posts.flatMap(p => p.categories))];
+
+  container.innerHTML = `
+    <label>Auteur:
+      <select id="filter-author">
+        <option value="">Tous</option>
+        ${authors.map(a => `<option>${a}</option>`).join("")}
+      </select>
+    </label>
+    <label>Tag:
+      <select id="filter-tag">
+        <option value="">Tous</option>
+        ${tags.map(t => `<option>${t}</option>`).join("")}
+      </select>
+    </label>
+    <label>Catégorie:
+      <select id="filter-category">
+        <option value="">Toutes</option>
+        ${categories.map(c => `<option>${c}</option>`).join("")}
+      </select>
+    </label>
+  `;
+
+  document.querySelectorAll("#filters select").forEach(sel => {
+    sel.addEventListener("change", () => {
+      const filtered = posts.filter(p => {
+        return (!filterAuthor.value || p.author === filterAuthor.value)
+            && (!filterTag.value || p.tags.includes(filterTag.value))
+            && (!filterCategory.value || p.categories.includes(filterCategory.value));
+      });
+      renderPosts(filtered);
+    });
+  });
+}
+
+function renderPosts(list) {
+  const container = document.getElementById("posts");
+  container.innerHTML = list.map(p => `
+    <a class="card" href="post.html?file=${p.file}">
+      <img src="images/${p.cover}">
+      <h3>${p.title}</h3>
+      <p>${p.author} — ${p.date}</p>
+    </a>
+  `).join("");
+}
+
+loadPosts();
+</script>
+
+</body>
+</html>

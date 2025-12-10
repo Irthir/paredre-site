@@ -1,0 +1,20 @@
+[
+  {
+    "file": "Le conte du roi corbeau.md",
+    "title": "Le conte du roi corbeau",
+    "author": "Whedab",
+    "date": "0382-06-29",
+    "cover": "Le conte du roi corbeau.jpg",
+    "tags": ["Elisa"],
+    "categories": ["Nouvelles"]
+  },
+  {
+    "file": "Le mythe du roi corbeau.md",
+    "title": "Le mythe du roi corbeau",
+    "author": "Whedab",
+    "date": "0373-01-14",
+    "cover": "Le mythe du roi corbeau.jpg",
+    "tags": ["Whedab"],
+    "categories": ["Nouvelles"]
+  }
+]
