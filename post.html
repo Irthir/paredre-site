@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Nouvelle</title>
+
+  <!-- Showdown pour Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,13 +17,30 @@
 async function loadPost() {
   const params = new URLSearchParams(location.search);
   const file = params.get("file");
-  const txt = await fetch("posts/" + file).then(r => r.text());
 
-  const md = txt.replace(/^---[\s\S]*?---/, ""); // retire le frontmatter
-  const converter = new showdown.Converter();
-  const html = converter.makeHtml(md);
+  if (!file) {
+    document.getElementById("content").innerText = "Aucun fichier spécifié.";
+    return;
+  }
 
-  document.getElementById("content").innerHTML = html;
+  try {
+    const response = await fetch("posts/" + file);
+    if (!response.ok) throw new Error("Fichier introuvable");
+
+    const txt = await response.text();
+
+    // Supprimer le frontmatter YAML
+    const md = txt.replace(/^---[\s\S]*?---/, "");
+
+    const converter = new showdown.Converter();
+    const html = converter.makeHtml(md);
+
+    document.getElementById("content").innerHTML = html;
+
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      "<p>Impossible de charger la nouvelle.</p><p>" + e.message + "</p>";
+  }
 }
 
 loadPost();
